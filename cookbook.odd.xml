@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="schemas/odd4odds.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="schemas/odd4odds.isosch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xml:lang="en"
+     xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+     xmlns:rng="http://relaxng.org/ns/structure/1.0" >
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Northeastern University Early Caribbean Digital Archive</title>
+        <author>
+          <persName>Elizabeth Hopwood</persName>
+        </author>
+      </titleStmt>
+      <publicationStmt>
+        <availability>
+          <p>[Statement of availability]</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Written by Northeastern University's Early Caribbean Digital Archive
+          Encoding Team. Original ODD document. Parts based on Northeastern University's Women Writer's Project</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change who="SS" when="2015-01-12">fixed our <gi>docRole</gi> problems. Please email me if you are having any problems with this element!</change>
+      <change who="EH" when="2014-12-21">Edited <gi>embLore</gi> gloss to
+        account for lore that is not categorized as Afro-Caribbean</change>
+      <change who="SS" when="2014-12-10">Added <gi>embLore</gi></change>
+      <change who="SS" when="2014-09-24">changed some things on <gi>embSN</gi>: added figure description, changed number 
+        of elements that it can legally contain. Also changed the number of elements commodity, flora and fauna can contain.
+      </change>
+      <change who="SS" when="2014-09-19">Subscribed <gi>ecda:commodity</gi> to att.global, since we apparently forgot
+        you should now be able to use <att>ana</att> on commodities!
+      </change>
+      <change who="SS" when="2014-08-27">Allowed att.nameLike to occur within all commodity-like elements (for
+        instances in which named plants/animals have either place/personal names or properAdjectives as a part of
+        their name). Also changed around <gi>content</gi> of commodity like elements, so that elements can occur
+        in any order. We may need to find a better workaround in the future, but this should work for now.
+      </change>
+      <change who="SS" when="2014-08-26">subscribed <gi>anonPers</gi> to the att.responsibility class, so that 
+        we can use <att>cert</att> on personographical data in header; also subscribed to att.canonical so that
+        we can use <att>ref</att>
+      </change>
+      <change who="EP SC SS" when="2014-08-07">came up with closed lists for values on type <gi>rs</gi> and 
+        <gi>distinct</gi></change>
+      <change who="SS" when="2014-07-03">readded analysis model, to include <gi>interp</gi> and <gi>interpGrp</gi>.
+        Included <gi>mentioned</gi>. Also got rid of att.global.analytic since it was causing duplicate @ana in schema
+      </change>
+      <change who="EH EP EH JN BJD" when="2014-07-01">added <gi>intSN</gi> and <gi>embSN</gi> to schema</change>
+      <change who="SS" when="2014-06-24">re-added the att.datable attribute class</change>
+      <change who="EH SS EMD" when="2014-06-23">Added <gi>flora</gi> and
+        <gi>fauna</gi> elements. Changed <gi>commodity</gi> and
+        <gi>anonPers</gi> to potentially inlcude more content. Changed <gi>fw</gi> to
+        closed list</change>
+      <change who="EH SS EP" when="2014-06-19">Added ship element. Added
+        hyperDiv. Added notes element.</change>
+      <change who="EH SS EP JN" when="2014-06-18">Added commodity element. Added
+        anonPers element. Deleted attribute classes. </change>
+      <change who="EH SS EP JN SC" when="2014-06-17">Deleted analysis module,
+        deleted certainty module, deleted corpus module, deleted msdescription
+        module, deleted nets module, deleted textcrit module, deleted verse
+        module; trimmed other modules. Added docRole, mcr, titleBlock</change>
+      <change who="EH" when="2014-06-09">Added bibliography to div type
+        attributes </change>  
+      <change who="EH" when="2014-05-22">Added div type attributes</change>
+      
+    </revisionDesc>
+  </teiHeader>
+  <text>
+
+      <!-- This template is intended to give you a quick starting point for
+           writing ODD files. You may find it useful to copy and paste 
+           specific constructs from odd_extended_template.xml, which contains
+           commented templates for specific ODD-writing tasks.
+      -->
+
+    <body>
+      <p>[One or more paragraphs describing the customization.]</p>
+      <!-- The <schemaSpec> element is in effect the root element for
+           the schema specification portion of the ODD. 
+              - @ident is required; it is allowed to be any name.
+              - @start says what element(s) are allowed as the root element
+                  of documents conforming to this schema.  -->
+      <schemaSpec ident="ecda" start="TEI">
+
+        <!-- The <moduleRef> elements specify which TEI modules will
+             be included in the schema. The value of the @key
+             attribute is the name of the module. The first four listed here 
+             are required: core, tei, header, textstructure. 
+        
+             To trim the contents of these modules, use @include OR @except:
+               - @include lists the elements from the module that will be included in the schema
+               - @except lists the elements from the module that will be excluded from the schema
+        
+        -->
+        <moduleRef key="core" except="binaryObject cb divGen editor email gb
+          media meeting milestone"/>
+          <elementSpec module="core" ident="distinct" mode="change">
+            <attList>
+              <attDef ident="type" mode="replace">
+                <datatype>
+                  <rng:ref name="data.enumerated"/>
+                </datatype>
+                <valList type="closed">
+                  <valItem ident="dialect"/>
+                  <valItem ident="scientific"/>
+                  <valItem ident="religious"/>
+                  <valItem ident="economic"/>
+                  <valItem ident="military"/>
+                  <valItem ident="nautical"/>
+                  <valItem ident="agricultural"/>
+                  <valItem ident="geographical"/>
+                  <valItem ident="ethnographic"/>
+                  <valItem ident="mentioned"/>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+          <elementSpec module="core" ident="rs" mode="change">
+            <attList>
+              <attDef ident="type" mode="replace">
+                <datatype>
+                  <rng:ref name="data.enumerated"/>
+                </datatype>
+                <valList type="closed">
+                  <valItem ident="person"/>
+                  <valItem ident="place"/>
+                  <valItem ident="properAdjective"/>
+                  <valItem ident="persGroup"/>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+        <moduleRef key="tei"/>
+        <moduleRef key="header"/>
+        <moduleRef key="textstructure" except="argument div1 div2 div3 div4 div5
+          div6 div7"/>
+<!--        added specific types of divisions
+-->        <elementSpec module="textstructure" ident="div" mode="change">
+          <attList>
+            <attDef ident="type" mode="replace">
+              <datatype>
+                <rng:ref name="data.enumerated"/>
+              </datatype>
+              <valList type="closed">
+                <valItem ident="act"/>
+                <valItem ident="notice"/>
+                <valItem ident="bibliography"/>
+                <valItem ident="book"/>
+                <valItem ident="castList"/>
+                <valItem ident="chapter"/>
+                <valItem ident="colophon"/>
+                <valItem ident="concluding"/>
+                <valItem ident="contents"/>
+                <valItem ident="corrigenda"/>
+                <valItem ident="ded"/>
+                <valItem ident="endnote"/>
+                <valItem ident="entry"/>
+                <valItem ident="epigraph"/>
+                <valItem ident="epilogue"/>
+                <valItem ident="essay"/>
+                <valItem ident="frontispiece"/>
+                <valItem ident="index"/>
+                <valItem ident="letter"/>
+                <valItem ident="part"/>
+                <valItem ident="petition"/>
+                <valItem ident="poem"/>
+                <valItem ident="poemGroup"/>
+                <valItem ident="prayer"/>
+                <valItem ident="prefatory"/>
+                <valItem ident="prologue"/>
+                <valItem ident="recipe"/>
+                <valItem ident="scene"/>
+                <valItem ident="section"/>
+                <valItem ident="speech"/>
+                <valItem ident="subsection"/>
+                <valItem ident="undetermined"/>
+                <valItem ident="volume"/>
+                <valItem ident="postscript"/>
+                <valItem ident="glossary"/>
+                <valItem ident="appendix"/>
+                <valItem ident="article"/>
+                <valItem ident="packet"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        <!--docRole-->
+        <elementSpec ident="docRole" mode="add">
+	  <gloss>document role</gloss>
+          <altIdent>docRole</altIdent>
+          <desc>contains an indication of a person or organization who
+            played a significant role in the production of the source
+            book, as given on the title page (often but not always
+            contained in a byline).</desc>
+          <classes mode="replace">
+            <memberOf key="model.nameLike.agent"/>
+            <memberOf key="model.global"/>
+            <memberOf key="model.titlepagePart"/>
+            <memberOf key="model.pLike.front"/>
+            <memberOf key="att.global"/>
+            <memberOf/>
+          </classes>
+          <content>
+            <rng:zeroOrMore>
+              <rng:ref name="persName"/>
+            </rng:zeroOrMore>
+            <rng:text/>
+          </content>
+          <attList>
+            <attDef ident="type" mode="add" usage="req">
+              <valList type="closed">
+                <valItem ident="author">
+                  <desc>A person who has written some or all of the main content  
+                    of the text </desc>
+                </valItem>
+                <valItem ident="editor">
+                  <desc>A person who has edited the text without
+                    contributing to its main content (adding annotations
+                    or providing other editorial oversight)</desc>
+                </valItem>
+                <valItem ident="translator">
+                  <desc>A person who has translated the main content
+                    of the text from one language into another</desc>
+                </valItem>
+                <valItem ident="publisher">
+                  <desc>A person or entity responsible for the
+                    publication (i.e. the sponsorship of the production
+                    and dissemination) of the work; in some cases this
+                    may be the author</desc>
+                </valItem>
+                <valItem ident="printer">
+                  <desc>A person or entity responsible for the
+                    physical printing process</desc>
+                </valItem>
+                <valItem ident="bookseller">
+                  <desc>A person or entity responsible for the sale
+                    and distribution of the work</desc>
+                </valItem>
+                <valItem ident="licensee">
+                  <desc> </desc>
+                </valItem>
+                <valItem ident="disseminator">
+                  <desc> </desc>
+                </valItem>
+                <valItem ident="uncertain">
+                  <desc> </desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        
+        
+        
+        <moduleRef key="analysis" include="interp interpGrp"/>
+        <moduleRef key="drama" except="camera caption sound view tech"/>
+        <moduleRef key="figures"/>
+        <moduleRef key="gaiji" include="g"/>
+        <moduleRef key="linking" except="alt altGrp"/>
+        <moduleRef key="namesdates" include="addName affiliation birth death
+          education event faith floruit forename genName geogName langKnowledge
+          langKnown listEvent listNym listOrg listPerson listPlace listRelation
+          nameLink nationality nym occupation org orgName persName person
+          personGrp placeName relation relationGrp residence roleName sex
+          socecStatus surname trait"/>
+        <moduleRef key="tagdocs"/>
+        
+       <moduleRef key="transcr" include="addSpan damage damageSpan delSpan fw
+         handNotes handShift supplied"/>
+        <elementSpec ident="fw" module="transcr" mode="change">
+            <attList>
+              <attDef ident="type" mode="replace">
+            <datatype>
+              <rng:ref name="data.enumerated"/>
+            </datatype>
+            <valList type="closed">
+              <valItem ident="pageNum"/>
+            </valList>
+              </attDef>
+            </attList>
+        </elementSpec>
+        
+        
+        <!-- <mcr> -->
+        <elementSpec ident="mcr" mode="add">
+          <gloss>meaningful change in rendition</gloss>
+          <desc>marks a word or phrase as graphically distinct from the
+            surrounding text, for reasons concerning which no claim is
+            made, other than there is some meaning present.</desc>
+          <classes mode="replace">
+            <memberOf key="att.global"/>
+            <memberOf key="model.hiLike"/>
+          </classes>
+          <content>
+            <rng:ref name="macro.paraContent"/>
+          </content>
+          <exemplum>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples"><p><mcr>Item</mcr>, 200 Crowns to <persName>Iſabella</persName> for undertaking.</p></egXML>
+          </exemplum>
+        </elementSpec>
+        <!-- <titlePage> -> <titleBlock>; also make type= required and give it our list of values -->
+        <elementSpec module="textstructure" ident="titlePage" mode="change">
+          <altIdent>titleBlock</altIdent>
+          <desc> </desc>
+          <attList>
+            <attDef ident="type" mode="change">
+              <desc>classifies the title block.</desc>
+              <defaultVal>titlePage</defaultVal>
+              <valList type="closed">
+                <valItem ident="titlePage">
+                  <gloss>title page</gloss>
+                  <desc> </desc>
+                </valItem>
+                <valItem ident="halfTitle">
+                  <gloss>half title</gloss>
+                  <desc> </desc>
+                </valItem>
+                <valItem ident="captionTitle">
+                  <gloss>caption title</gloss>
+                  <desc> </desc>
+                </valItem>
+                <valItem ident="colophon">
+                  <desc> </desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        <!--new element anonPers added; need to add commodity/flora/fauna etc when
+        those elements are added-->
+        <elementSpec ident="anonPers" mode="add" ns="http://dsg.northeastern.edu/ecda/ns/1.0">
+          <desc>Used to encode references to unnamed persons in the text</desc>
+          <classes mode="replace">
+            <memberOf key="att.global"/>
+            <memberOf key="model.nameLike.agent"/>
+            <memberOf key="model.persStateLike"/>
+            <memberOf key="att.canonical"/>
+            <memberOf key="att.responsibility"/>
+          </classes>
+          <content>
+            <rng:interleave>
+              <rng:text/>
+              <rng:zeroOrMore>
+                <rng:ref name="model.gLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.nameLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.emphLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="pb"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="fw"/>
+              </rng:zeroOrMore>
+            </rng:interleave>
+          </content>
+        </elementSpec>
+        
+        <classSpec ident="model.hyperDivPart" type="model" mode="add" generate="sequenceOptional">
+          <desc>groups together elements that may appear inside the
+            <gi>hyperDiv</gi></desc>
+        </classSpec>
+
+        <elementSpec ident="hyperDiv"
+          ns="http://dsg.northeastern.edu/ecda/ns/1.0" mode="add">
+          <gloss>hyper division</gloss>
+          <desc>Those things that are part of the textual content of
+          the document, or directly related to it, but do not fit into
+          the front matter, body, or back matter.</desc>
+          <classes mode="replace">
+            <memberOf key="att.global"/>
+	  </classes>
+          <content>
+            <rng:ref name="model.hyperDivPart_sequenceOptional"/>
+          </content>
+         <!-- <constraintSpec scheme="schematron" ident="adds_in_adds_have_note">
+	    <constraint>
+	      <sch:rule context="adds/add/child::*">
+		<sch:assert test="self::note">An ＜add＞ inside ＜adds＞ inside the
+		＜hyperDiv＞ should not have any children other than ＜note＞ (and there is a
+		<sch:name/> here).</sch:assert>
+	      </sch:rule>
+	    </constraint>
+          </constraintSpec>-->
+          <remarks>
+            <p>Currently, the content of the <gi>hyperDiv</gi> is
+            quite restrictive. It consists of 0 or 1 of each of the
+            following, in the specified order:
+            <list>
+              <item><gi>castList</gi>, for speaking roles that occur
+              in the drama, but for which there is no entry in the
+              printed cast list.</item>
+              <item><gi>linkGrp</gi>, for <gi>link</gi>s that act to
+              resolve plural references (i.e., to be the target of
+              name references to multiple people at once, a single
+              reference to more than one person)</item>
+              <item><gi>acrostics</gi>, for <gi>acrostic</gi>s</item>
+              <item><gi>adds</gi>, for additions (encoded with
+              <gi>add</gi>) that are the addition of a footnote or
+              marginal note (encoded with <gi>note</gi>)</item>
+              <item><gi>notes</gi>, for footnotes and marginal notes
+              (encoded with <gi>note</gi>)</item>
+            </list>
+            In the future we may consider loosening or re-arranging this.</p>
+          </remarks>
+        </elementSpec>
+           
+        <!-- need to modify <text> to allow <hyperDiv> -->
+        <elementSpec module="textstructure" ident="text" mode="change">
+          <content>
+            <!-- the same as TEI P5 except as commented -->
+            <rng:group>
+              <rng:zeroOrMore>
+                <rng:ref name="model.global"/>
+              </rng:zeroOrMore>
+              <rng:optional>                                   <!-- ecda -->
+                <rng:ref name="hyperDiv"/>                     <!-- ecda -->
+                <rng:zeroOrMore>                               <!-- ecda -->
+                  <rng:ref name="model.global"/>               <!-- ecda -->
+                </rng:zeroOrMore>                              <!-- ecda -->
+              </rng:optional>                                  <!-- ecda -->
+              <rng:optional>
+                <rng:ref name="front"/>
+                <rng:zeroOrMore>
+                  <rng:ref name="model.global"/>
+                </rng:zeroOrMore>
+              </rng:optional>
+              <rng:choice>
+                <rng:ref name="body"/>
+                <rng:ref name="group"/>
+              </rng:choice>
+              <rng:zeroOrMore>
+                <rng:ref name="model.global"/>
+              </rng:zeroOrMore>
+              <rng:optional>
+                <rng:ref name="back"/>
+                <rng:zeroOrMore>
+                  <rng:ref name="model.global"/>
+                </rng:zeroOrMore>
+              </rng:optional>
+            </rng:group>
+          </content>
+        </elementSpec>
+
+        <!-- <notes> -->
+        <elementSpec ident="notes" mode="add" ns="http://dsg.northeastern.edu/ecda/ns/1.0">
+          <desc>Container that occurs in <gi>hyperDiv</gi> and holds
+          one or more <gi>note</gi> elements.</desc>
+          <classes mode="replace">
+            <memberOf key="att.global"/>
+            <memberOf key="model.hyperDivPart"/>
+          </classes>
+          <content>
+            <rng:oneOrMore>
+              <rng:ref name="note"/>
+            </rng:oneOrMore>
+          </content>
+        </elementSpec>
+
+	<!--commodity element added, will need to be part of .globalanalytic-->
+        <elementSpec ident="commodity" ns="http://dsg.northeastern.edu/ecda/ns/1.0" mode="add">
+          <desc>Encodes references to commodities. Should include ana attribute.</desc>
+          <classes mode="change">
+            <memberOf mode="add" key="model.nameLike"/> <!-- including global.analytic is causing a redundancy in the schema, so I deleted it -->
+            <memberOf mode="add" key="model.global"/>
+            <memberOf mode="add" key="att.global"/>
+          </classes>
+          <content>
+            <rng:interleave>
+              <rng:text/>
+              <rng:zeroOrMore>
+                <rng:ref name="fw"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="pb"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.emphLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.nameLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.hiLike"/>
+              </rng:zeroOrMore>
+            </rng:interleave>
+          </content>
+        </elementSpec>
+        
+        <!-- flora element added, may still need edits as odd is updated -->
+        <elementSpec ident="flora" ns="http://dsg.northeastern.edu/ecda/ns/1.0"
+          mode="add">
+          <desc>Encodes references to plants. Should include ana attribute.</desc>
+          <classes mode="change">
+            <memberOf mode="add" key="model.nameLike"/>   <!-- including global.analytic is causing a redundancy in the schema, so I deleted it -->
+            <memberOf mode="add" key="model.global"/>
+            <memberOf mode="add" key="att.global"/>
+         </classes>
+          <content>
+            <rng:interleave>
+              <rng:text/>
+              <rng:zeroOrMore>
+                <rng:ref name="fw"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="pb"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.emphLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.nameLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.hiLike"/>
+              </rng:zeroOrMore>
+            </rng:interleave>
+          </content>
+        </elementSpec>
+            
+        <!-- fauna element added, may still need edits as odd is updated -->  
+        <elementSpec ident="fauna" ns="http://dsg.northeastern.edu/ecda/ns/1.0"
+            mode="add">
+            <desc>Encodes references to animals. Should include ana attribute.</desc>
+            <classes mode="change">
+              <memberOf mode="add" key="model.nameLike"/> <!-- including global.analytic is causing a redundancy in the schema, so I deleted it -->
+              <memberOf mode="add" key="model.global"/>
+              <memberOf mode="add" key="att.global"/>
+            </classes>
+            <content>
+              <rng:interleave>
+                <rng:text/>
+                <rng:zeroOrMore>
+                  <rng:ref name="fw"/>
+                </rng:zeroOrMore>
+                <rng:zeroOrMore>
+                  <rng:ref name="pb"/>
+                </rng:zeroOrMore>
+                <rng:zeroOrMore>
+                  <rng:ref name="model.emphLike"/>
+                </rng:zeroOrMore>
+                <rng:zeroOrMore>
+                  <rng:ref name="model.nameLike"/>
+                </rng:zeroOrMore>
+                <rng:zeroOrMore>
+                  <rng:ref name="model.hiLike"/>
+                </rng:zeroOrMore>
+              </rng:interleave>
+            </content>
+          </elementSpec>
+          
+        <!-- food element added, may still need edits as odd is updated -->
+        <elementSpec ident="food" ns="http://dsg.northeastern.edu/ecda/ns/1.0"
+          mode="add">
+          <desc>Encodes references to animals. Should include ana attribute.</desc>
+          <classes mode="change">
+            <memberOf mode="add" key="model.nameLike"/>  <!-- including global.analytic is causing a redundancy in the schema, so I deleted it -->
+            <memberOf mode="add" key="model.global"/>
+            <memberOf mode="add" key="att.global"/>
+          </classes>
+          <content>
+            <rng:interleave>
+              <rng:text/>
+              <rng:zeroOrMore>
+                <rng:ref name="fw"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="pb"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.emphLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.nameLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.hiLike"/>
+              </rng:zeroOrMore>
+            </rng:interleave>
+          </content>
+        </elementSpec>
+        
+       
+        
+        
+       <!-- Added ship element-->
+        <!-- original namespace from Mary Isbell is as follows: we changed to our ns
+        since we edited the element ns="http://www.newhaven.edu/thedigitalyoungidea/ns/1.0" -->
+        <elementSpec ident="shipName" ns="http://dsg.northeastern.edu/ecda/ns/1.0"  mode="add">
+          <desc>encodes names of ships</desc>
+          <classes mode="replace">
+            <memberOf key="model.nameLike"/>
+           <memberOf key="model.global"/>
+           <memberOf key="att.datable.w3c"/>
+            <memberOf key="att.global"/>
+          </classes>
+          <content>
+            <rng:text/>
+            <rng:zeroOrMore>
+              <rng:ref name="model.nameLike"/>
+            </rng:zeroOrMore>
+            <rng:zeroOrMore>
+              <rng:ref name="fw"/>
+            </rng:zeroOrMore>
+            <rng:zeroOrMore>
+              <rng:ref name="pb"/>
+            </rng:zeroOrMore>
+            <rng:zeroOrMore>
+              <rng:ref name="foreign"/>
+            </rng:zeroOrMore>
+            <rng:zeroOrMore>
+              <rng:ref name="model.emphLike"/>
+            </rng:zeroOrMore>
+            <rng:zeroOrMore>
+              <rng:ref name="model.hiLike"/>
+            </rng:zeroOrMore>
+          </content>
+          <exemplum>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <p>They sailed on the <x:shipName
+                xmlns:x="http://www.newhaven.edu/thedigitalyoungidea/ns/1.0">
+                Chesapeake</x:shipName></p>
+            </egXML>
+          </exemplum>
+        </elementSpec>
+        
+        <elementSpec module="core" ident="unclear" mode="change">
+          <attList>
+            <attDef ident="reason" mode="replace" usage="opt">
+              <datatype minOccurs="1" maxOccurs="1">
+                <rng:ref name="data.enumerated"/>
+              </datatype>
+              <valList type="closed">
+                <valItem ident="damaged">
+                  <desc> </desc>
+                </valItem>
+                <valItem ident="flawed-reproduction">
+                  <desc> </desc>
+                </valItem>
+                <valItem ident="obscured">
+                  <desc> </desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        <elementSpec ident="embSN" mode="add" ns="http://dsg.northeastern.edu/ecda/ns/1.0">
+          <gloss>Embedded Slave Narrative</gloss>
+          <desc>Encodes slave narratives embedded within text (as opposed to interpellated slave narratives)</desc>
+          <classes>
+            <memberOf key="att.global"/>
+            <memberOf key="model.global"/>
+            <memberOf key="model.divLike"/> <!-- Add schematron specs so that this is only allowed *within* front/body/back -->
+            <memberOf key="model.qLike"/>
+          </classes>
+          <content>
+            <rng:interleave>
+              <rng:text/>
+              <rng:zeroOrMore>
+                <rng:ref name="fw"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="head"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="pb"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.emphLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.qLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.nameLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.divPart"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="trailer"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="figure"/>
+              </rng:zeroOrMore>
+            </rng:interleave>
+          </content>
+        </elementSpec>
+        
+        <elementSpec ident="intSN" mode="add" ns="http://dsg.northeastern.edu/ecda/ns/1.0">
+          <gloss>Interpellated Slave Narrative</gloss>
+          <desc>Encodes interpellated slave narratives within the text (as opposed to embedded slave narratives)</desc>
+          <classes>
+            <memberOf key="model.global"/>
+            <memberOf key="att.global"/>
+            <memberOf key="model.qLike"/>
+          </classes>
+          <content>
+            <rng:text/>
+            <rng:zeroOrMore>
+              <rng:ref name="macro.paraContent"/>
+            </rng:zeroOrMore>
+          </content>
+        </elementSpec>
+        
+        
+        <elementSpec ident="embLore" mode="add" ns="http://dsg.northeastern.edu/ecda/ns/1.0">
+          <gloss>Embedded Lore</gloss>
+          <desc>Encodes lore (e.g. tales, songs, riddles) embedded in the text</desc>
+          <classes>
+            <memberOf key="att.global"/>
+            <memberOf key="att.typed"/>
+            <memberOf key="model.global"/>
+            <memberOf key="model.divLike"/>
+            <memberOf key="model.qLike"/>
+          </classes>
+          <content>
+            <rng:interleave>
+              <rng:text/>
+              <rng:zeroOrMore>
+                <rng:ref name="fw"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="head"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="pb"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.emphLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.qLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.nameLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.divPart"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="trailer"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="figure"/>
+              </rng:zeroOrMore>
+            </rng:interleave>
+          </content>
+        </elementSpec>
+        
+        
+        
+        
+        <!-- ******************************** -->
+        <!-- class deletion section          -->
+        <!-- classes we don't use get deleted -->
+        <!-- ******************************** -->
+        <classSpec ident="att.breaking" type="atts" mode="delete"/>
+        <classSpec ident="att.coordinated" type="atts" mode="delete"/>
+        <classSpec ident="att.cReferencing" type="atts" mode="delete"/>
+        <classSpec ident="att.datable.custom" type="atts" mode="delete"/>
+        <classSpec ident="att.datable.iso" type="atts" mode="delete"/>
+        <classSpec ident="att.datcat" type="atts" mode="delete"/>
+       
+        
+        
+           
+           
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>
