@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="cookbook-chapter/out/cookbook.odd.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+   xmlns:ehfoodways="http://dsg.northeastern.edu/ehfoodways/ns/1.0">
+   
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Test Data for Cookbook Chapter</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+     <front>
+        <titlePage>
+           <docTitle>
+              <titlePart><title>The Jamaican Cookery Book</title>
+              <title type="subtitle">Three Hundred and Sixty-Four Simple Cookery
+              Receipts and Household Hints Collected By <persName>Caroline Sullivan</persName></title>
+              </titlePart>
+                
+             
+              </docTitle>
+        
+        </titlePage>
+        
+     </front>
+   <body>
+     <div type="preface">
+      <p>I do not think I am
+        mistaken in saying that up to the present time a
+         book on native cookery has never been produced in Jamaica: and it is to
+         supply that want that I place before the public the few simple receipts
+         it has been my pleasant occupation to gather together from time to
+         time. I am quite aware that the various methods of cooking here
+         mentioned may be open to criticism. There are doubtless ways known
+         superior to those a knowledge of which I have succeeded in obtaining.
+         But faulty as they may be, I venture to hope that those here given may
+         be of some assistance to <emph>new comers</emph>, on whose especial
+         behalf this work has been undertaken.</p>
+         <p>I do not venture to offer any hints to those whose long residence in
+         the island renders them familiar with all the details of our ordinary
+         Jamaica cooking; but from them I should be glad to receive notes on any
+         articles which I may have omitted.</p>
+         <p>I have carefully refrained from giving European cookery, and have
+            confined myself entirely to the every day dishes which come under
+            immediate notice in this island. Simple as these receipts may be,
+            should any of them prove to be of help and use, I shall feel amply
+            repaid for any trouble I may have taken in collecting them.
+         <addName>C.S.</addName></p>
+         <dateline>St. Andrew, Jamaica. December, 1893</dateline>
+      </div>
+      <div>
+         <head>Preface to the Second Edition</head>
+         <p>The kind appreciation with which my Jamaica Cookery Book has been
+            generally received, encourages me to place a second edition of it
+            before the public. Since its publication, I have been fortunate
+            enough to collect between sixty and seventy additional receipts,
+            which may I trust, prove of some small service to those in need of
+            them, as the others have been.
+            <persName>Caroline Sullivan</persName></p>
+         <dateline>St. Andrew, Jamaica. November, 1897</dateline>
+      </div>
+            <!-- table of contents -->
+         <div>
+            <div type="section">
+            <head>I. — SOUPS.</head>
+            <div type="recipe" ana="native">
+               <head>1. Turtle Soup</head>
+               <div type="orientationNote">
+               <p>This is
+              prepared in many ways, some preferring it thin, others thick: a
+              good family soup may be made as follows:—</p></div>
+             
+               <div type="list">
+              <list type="simple">
+                 <item>Two lbs. of Turtle stew meat.</item>
+              <item>Cloves, cinnamon, and mace</item>
+                 <item>One quart and one pint of water,</item>
+                 <item>One large onion or some skellion</item>
+                 <item>A sprig of parsley.</item>
+                 <item>Some herbs</item>
+                 <item>A few tomatoes</item>
+                 <item>Six cloves.</item>
+                 <item>A piece of salt pork and a piece of salt beef</item>
+                 <item>Thickening of flour.</item>
+                 <item>Sauce, lime juice. salt and cayenne pepper.</item>
+                 <item>One wineglassful of sherry.</item>
+           </list>
+               </div>
+               <div type="instructions">
+                  <p>
+                     Get two lbs. of <ehfoodways:nativeIngredient type="meat">turtle stew meat</ehfoodways:nativeIngredient> or a little less, and stew it down
+             the day before you make your soup, with cloves, cinnamon and mace;
+             next day put the stew and its gravy into a quart and pint of water
+             with half a pound of turtle soup meat; add an onion or some
+             skellion (some people put a turnip and a carrot) some parsley,
+             herbs and tomatoes. When it has boiled half an hour, add the salt
+             pork and salt beef cut in pieces. Let it boil another hour, then
+             remove any fat there may be, which cut in dice, and put it in the
+             tureen with some of the soft gristle as well. Let the soup boil
+             another half hour, adding water if too low; then strain it through
+             a cullender. Put the strained soup back in the pot, and put in a
+             good tablespoonful of flour previously mixed smooth with water and
+             poured in; then add a little Worcester or Harvey's sauce, the juice
+             of a lime, some salt, a little cayenne and stir till it is nice and
+             think like cream. Pour this over the fat and gristle dice in the
+             tureen and serve, adding just before serving a wineglassful of
+             sherry.</p>
+               </div>
+            <!-- I want to track process (stew, braise). spices. meat. veg.  -->
+         </div>
+      <div>
+         <head>2. Ochro Soup.</head>
+         <list type="simple">
+            <item>Two dozen ochros.</item>
+            <item>One and a half pound of salt beef</item>
+            <item>Two quarts of water.</item>
+            <item>Seasoning, tomato and skellion and thyme</item>
+            <item>Indian kale or callilu</item>
+            <item>Penny halfpenny worth of salt pork</item>
+         </list>
+         <p>
+         Put the ochros into the water and boil until the seeds get red: then
+         add the pork and beef and go on boiling, adding the seasoning and other
+         ingredients. Chop fine some kale or callilu and add to the soup, and
+         serve. It can be strained if preferred. A few black crabs boiled and
+         added to the soup make it excellent.</p>
+      </div>
+               
+      <div>
+         <head>3. Sugar Bean soup</head>
+         <list type="simple">
+            <item>Penny halfpenny worth of green fresh sugar beans.</item>
+            <item>One quart and one pint of water.</item>
+            <item>Some bones of soup meat and a little salt pork.</item>
+            <item>Black pepper, skellion and herbs</item>
+         </list>
+            <p>Boil the beans in the water putting it on in cold water. When
+               half done add a little soup meat and some salt pork. If
+               preferred, the beans are left in the soup and it is then served
+               unstrained. Children are especially fond of it, particularly if a
+            little potato or yam be boiled in it also. The addition of a few
+            tomatoes is according to taste.</p>
+      </div>
+      <div>
+         <head><q>Bannabis</q> soup</head>
+         <p>This is a large bean, and the soup made from it is particularly
+            delicate.</p>
+         <list type="simple">
+            <item>One pint Bannabis beans.</item>
+            <item>One quart water</item>
+            <item>Half a cocoanut made into milk.</item>
+            <item>Herbs.</item>
+         </list>
+            <p>A small piece of salt beef and the same of salt pork (or a beef
+               bone or a bit of ham or a tongue bone. Soak the beans for about
+               an hour or more in cold water. Then take them out and strip off
+               the skin and put them into a quart of hot water. Boil half an
+               hour, then add the beef, pork and herbs. Now grate the cocoanut
+               and squeeze out as much milk from it as you can, wringing it
+               through a cloth. This is to be added to the soup just before
+               serving, well stirred in; but the soup itself takes from one hour
+               to one and a half to boil
+            </p>
+      </div>
+      <div>
+         <head>5. <ehfoodways:nativeIng class="vegetable">Goongoo Peas Soup.</ehfoodways:nativeIng></head>
+         <list type="simple">
+            <item>One quart of water. Seasoning.</item>
+            <item>One half pint of dry goongoos</item>
+            <item>A penny half penny worth of either salt beef or salt pork.</item>
+         </list>
+            <p>Put the peas in cold water (about a quart) and let them boil for
+               two hours and a half with a sprig of thyme and a piece of
+               skellion. <unclear> then</unclear>rub through a cullender smooth and thick, and
+                  serve with sippets of dry toast handed. Add the salt pork
+                  about half an hour after the peas have been on the fire.</p>
+      </div>
+               
+               
+      <!-- Using Red Peas Soup to model different ways of marking -->         
+               
+      <div type="recipe" >
+         <head>6. Red Peas Soup</head><note>N.R.—<ehfoodways:cultDist>The natives do not strain their
+         peas soup: they eat the whole thing boiled with yam, coco and dumplings
+         and often with a remarkable concoction called
+            <ehfoodways:nativeIngredient class="vegetable"><soCalled>"foo foo"</soCalled></ehfoodways:nativeIngredient> which consists
+         of yam or coco boiled and beaten and then added to the soup.</ehfoodways:cultDist> Needless
+         to say, this makes them a decidedly substantial repast. The dumplings
+         are often made with equal parts of flour and cornmeal.</note>
+         <list type="simple">
+            <item>One pint of peas.</item>
+            <item>Two quarts of water.</item>
+            <item>Penny-half-penny worth of salt pork.</item>
+            </list>
+         <p>Put the peas into cold water and boil three hours till the peas are
+            soft, adding penny-half-penny worth of salt pork about two hours and
+            a half after boiling has begun. At the end of three hours time press
+            the peas through a cullender. Serve with dry toast cut in dice.</p>
+      </div>
+      
+           <div>
+                  <head>6. Red Peas Soup</head>
+                  <div type="orientationNote">
+                     <p>N.R.—The natives do not strain their
+                     peas soup: they eat the whole thing boiled with yam, coco and dumplings
+                     and often with a remarkable concoction called "foo foo" which consists
+                     of yam or coco boiled and beaten and then added to the soup. Needless
+                     to say, this makes them a decidedly substantial repast. The dumplings
+                     are often made with equal parts of flour and cornmeal.</p></div>
+                  <div type="list">
+                  <list type="simple">
+                     <item>One pint of peas.</item>
+                     <item>Two quarts of water.</item>
+                     <item>Penny-half-penny worth of salt pork.</item>
+                  </list></div>
+                  <div type="instructions">
+                  <p>Put the peas into cold water and boil three hours till the peas are
+                     soft, adding penny-half-penny worth of salt pork about two hours and
+                     a half after boiling has begun. At the end of three hours time press
+                     the peas through a cullender. Serve with dry toast cut in dice.</p>
+                  </div>
+               </div>
+      
+      
+      
+         <div>
+            <head>7. White Peas Soup.</head>
+            <p>This is prepared in the same way as red peas soup.</p>
+         </div>
+      <div>
+         <head>8. Cockle Cress Soup.</head>
+         <list>
+            <item>1 Pint of cockle cress peas.</item>
+            <item>1 Quart of water.</item>
+            <item>Skellion, tomatoes</item>
+            <item>Salt pork.</item>
+         </list>
+         <p>Put the peas on to boil for two hours and a half putting them on in
+            cold water, with the tomatos (a few) and one large skellion. About
+            one hour afterwards add the salt pork (or beef or ham or tongue
+            bone) and at the end of another hour and a half rub through a
+            callender smooth and thick. Serve, and hand sippets of dry toast to
+            eat with it.</p>
+      </div>
+   <div>
+      <head>9. Coco Soup</head>
+      <p>This is a favourite dish amongst the peasantry, especially in the
+         country parts where fresh meat is scarce.</p>
+      <list>
+         <item>1 quart of water</item>
+         <item>Three large cocos.</item>
+         <item>A penny half penny worth of salt pork and the same of salt
+            beef.</item>
+         <item>Some dumplings, a little bunch of seasoning and some skellion and
+            tomatos.</item>
+      </list>
+      <p>Cut the cocos in halves and put into the water to boil. In about a
+         quarter of an hour, add the pork, beef and seasonings. Boil another
+         quarter of an hour. Then mash up the cocos fine and thick, and serve
+         with some tiny dumplings, any size or shape desired.</p>
+   </div>
+      <div>
+         <head>10. Callilu Soup.</head>
+         <p>This is another of the country soups very often used by the people.</p>
+         <list>
+            <item>One quart of water.</item>
+            <item>One small bunch of callilu.</item>
+            <item>A slice of salt pork and the same of salt beef.</item>
+           </list>
+         <p>Trim the callilu by taking off the rough scaly bits from the leaves,
+            and then put it into some boiling water for about a quarter of an
+            hour. Throw away that water and put on a quart of water to boil,
+            meanwhile take the callilu and chop it very fine indeed, then add it
+            to the water: boil a quarter of an hour and then add the beef and
+            pork. In another quarter of an hour it will be fit for table.</p>
+      </div>
+      <div>
+         <head>11. Shrimp Soup.</head>
+         <list>
+            <item>One pound of fish.
+            </item>
+            <item>One quart and one pint of water.</item>
+            <item>Half a pound of shrimps.</item>
+            <item>Pepper and salt, thyme, lime-peel and skellion.</item>
+            <item>A penny half-penny worth of salt pork or beef.</item>
+            <item>A teaspoonful of butter.</item>
+            <item>Two cloves.</item>
+            <item>A little sauce and a squeeze of lime.</item>
+        </list>
+         <p>Boil the fish in the quart and pint of water till reduced to a
+            quart. Pick the shrimps and pound the heads, tails and skins fine,
+            then put this and the shrimps into the fish stock, removing the
+            fish. Put in the butter and seasoning and cloves. Boil ten minutes.
+            Take out the shrimps, cut in small pieces and put in the soup
+            tureen. Boil the rest of the ingredients in the stock another half
+            hour. Thicken with a little flour and pour over the shrimps, adding
+            a squeeze of lime.</p>
+      </div>
+      <div>
+         <head>12. Lobster Soup</head>
+           <p>Make a little stock first of any kind of fish, till it makes one
+              pint.</p>
+         <list>
+            <item>One lobster.</item>
+            <item>Pepper and salt, parsley, thyme, lime-peel, bread crumbs and
+               onion</item>
+            <item>Butter, milk and nutmeg</item>
+      </list>
+         <p>Boil the lobster, seasoning the water it was boiled in; put all the
+            meat of it, <emph>except the tail ends and any corals</emph>, into a
+            mortar with the shell and pound it all together as fine as
+            possibe<sic>possible</sic>. Add this to the fish soup stock, and the
+            water the lobster was boiled in; season with pepper and salt,
+            parsley, thyme, lime-peel and some bread crumbs and an onion. Simmer
+            quietly for nearly two hours, then strain it off. Have ready the
+            tail end of the lobsters chopped into dice and the lobster corals
+            which put into the tureen. Add a little milk and a desertspoonful of
+            butter and some nutmeg to the soup and give it one boil; pour into
+            the tureen, and serve: some people like force-meat balls added to
+            this soup.</p>
+      </div>
+      <div>
+         <head>13. Jonga Soup.</head>
+         <p>This is prepared similarly to cray fish or bisque soup.</p>
+         <p>Half a dozen large jongas, butter, seasoning, grated lime-peel,
+            bread crumbs, onion or skellion and milk.</p>
+         <p>Half fry the jongas in butter, then pound both flesh and shells
+            together (but reserve one or two whole to cut into dice to serve
+            with the soup); pound them in a mortar, season highly, adding some
+            grated lime peel, bread crumbs, onion or skellion with the usual
+            herbs. Boil gently for one hour, strain and put back in the pot for
+            a little with the jongas cut in dice, add a little butter (about a
+            teaspoonful) and half a cupful of milk. Stir well and serve hot.</p>
+      </div>
+      <div>
+         <head>14. Ackee Soup</head>
+         <p>Take 12 ackees: pick them well taking out the pink part. Put them
+            into a piece of muslin, and boil them. Put on one quart of water,
+            one pound of beef, a small piece of salt pork or salt beef to make
+            it tasty: also some seasoning, thyme and skellion. Mash the ackees
+            quite smooth and mix them with the soup and boil them all
+            together.</p>
+      </div>
+      <div>
+         <head>15. Cocoanut Soup</head>
+         <list>
+            <item>One lb. of beef. One quart of water.</item>
+            <item>One small piece of salt pork or beef.</item>
+            <item>Two small white cocos.</item>
+            <item>Skellion, thyme.</item>
+            <item>One cocoanut.</item>
+            <item>Half a pint of hot water.</item>
+         </list>
+         <p>Put on one lb. of beef with a piece of salt beef or salt pork, two
+            small white cocos and some skellion and thyme, in one quart of water
+            to boil. Boil it down to one pint. Grate a small cocoanut, throw
+            half a pink of hot water on it, then squeeze out the milk. Pour this
+            milk into the soup and boil up, once. Before putting the cocoanut
+            milk into the soup, the soup must be quite boiled and strained, then
+            add the milk to the boiling soup. Stir well, and serve at once.</p>
+      </div>
+           <div>
+               <head>16. Pepper Pot</head>
+               <list>
+                  <item>Three tablespoonfuls of pure casseripe to every quart of
+                  water, cold. Salt to taste.</item>
+                  <item>One handful of bird peppers.</item>
+                  <item>Meat, eggs.</item> 
+                 
+               </list>
+               <p>Get an earthen vessel. To every quart of cold water, add three
+                  tablespoonfuls of the pure caseripe with salt to taste and a
+                  handful of bird peppers. If these cannot be had, use some
+                  cayene. Cut the meat into small pieces after being well
+                  cooked, and put into the pot; boil well for half an hour. Any
+                  sort of meat may be used, all mixed in it, and hard boiled
+                  eggs are an improvement. It should be warmed every day, and
+                  something added each day.</p>
+            </div>
+      <div>
+         <head>17. Pumpkin Soup</head>
+         <list>
+            <item>One large slice of pumkin or half a small pumkin.</item>
+            <item>One quart and a pint of water.</item>
+            <item>Either some soup meat or a little salt pork or salt beef.</item>
+            <item>Black pepper, thyme.</item>
+            
+         </list>
+            <p>Cut up the pumkin and add to the water (either cold or hot),
+               putting with it the soup meat if fresh meat and a little thyme
+               and black pepper; in about half an hour's time add if liked a
+               small bit of salt pork or salt beef, or else salt to taste. In
+               about another half hour strain the soup through a cullender and
+               serve curried: this soup is particularly palatable.</p>
+      </div>
+         </div>
+      <div>
+         <head>II. FISH</head>
+         <p>Snappers, mullet, king-fish, mackerel, old wife, calepeaver,
+            cutlass, mountain mullet, lobsters, crayfish, oysters, jongas, crabs
+            shrimps and turtle all have their season in Jamaica.</p>
+         <p>There are two sorts of crabs the white and the black. The former are
+            not generally eaten being foul feeders, but the black crabs are
+            highly esteemed and are counted among the delicacies of Jamaica.</p>
+         <div>
+            <head>18. King-Fish</head>
+            <p>This is a much esteemed fish, and is good cooked in any way.
+               Boiled and served with butter and parsley or oyster or anchovy
+               sauce, it must be appreciated by everyone. King-fish steaks, that
+               is king-fish cut up in thick slices and broiled with onions, are
+               excellent, especially if a rich brown gravy be added. Opened and
+               stuffed with bread-crumbs and oysters and served with tomato
+               sauce they make a rich and agreeable dish.</p>
+         </div>
+         <div>
+            <head>19. Mountain Mullet</head>
+            <p>These are esteemed ome of Jamaica's delicacies. They are of
+               excellent flavour, but the drawback to them in many people's
+               opinion is the number of small bones they possess. The nicest way
+               of cooking them is rolling them in buttered paper and frying
+               them, sending them to table in the paper: but they can of course
+               be fried plain or boiled if preferred.</p>
+         </div>
+         <div>
+            <head>20. Cutlass</head>
+            <p>This is a long ribbony fish and it has small bones at the side,
+               which must be carefully taken away: very good cutlets can be made
+               of this fish, but they make excellent fish cakes or fish pies.
+               They do well for Kedgeree, a mixture of boiled rice, picked fish,
+               mustard, butter and curry powder.</p>
+      </div>
+         <div>
+            <head>21. Calepeaver</head>
+            <p>This fish is sometimes called the Salmom of Jamaica. It is a very
+            rich delicately flavoured fish: it is more often to be had in the
+            vicinity of Spanish Town. The size varies, but they are sometimes
+            very fine and large. The best way of cooking this fish is to boil
+            it; putting it on (after carefully cleansing it and rubbing it with
+            lime-juice) in hot water with a little salt in it, boiling slowly;
+            allowing ten minutes boiling to each pound of fish. Shrimp and
+            butter sauce or oyster sauce are good additions, but perhaps butter
+            and parsley is best, and a cut lime handed to squeeze over.</p>
+        </div>
+         <div>
+            <head>22. Jongas</head>
+            <p>Jongas, are a kind of small cray-fish which are often found in
+               the mountain rivers. They are cooked like lobsters, and make an
+               excellent stew or fricassee or curry.</p>
+         </div>
+         <div>
+            <head>23. Oysters</head>
+            <p>Of these there are two sorts, the round or raw-eaten oyster, and
+               the flat or cooking oyster. The former are small but very
+               delicate in flavour; they can of course also be cooked. The flat
+               oyster is the best for scallops or patties, or in any cooked
+               form. The way to open these is by placing them near the fire when
+               the shells open of themselves.</p>
+         </div>
+         <div>
+            <head>24. Roasted Lobster</head>
+            <p>More than half boil it. Then take it out of the water and shell
+               it as quickly as possible. While hot, rub it well with butter,
+               put it in a Dutch oven, baste it well until nicely frothed, and
+               serve with melted butter.</p>
+         </div>
+         <div>
+            <head>25. Lobster Croquettes</head>
+            <list>
+               <item>One small lobster.</item>
+               <item>Seasoning, tomato, and pepper, spices, one onion,
+                  lime-juice, lime-peel, salt, butter, milk, grated bread, two
+                  eggs.</item>
+            </list>
+               <p>Shell a small lobster and chop it fine with seasoning and
+                  nutmeg, onion, tomato, pepper and thyme, with a little grated
+                  lime-peel and some of the juice of the lime and some salt. Add
+                  a dessert spoonful of butter and about as much cream or milk
+                  and two table-spoonfuls of breaded bread. Mix all together
+                  with two beaten eggs: make balls, roll in egg and bread crumb,
+                  and fry. Put either a rich white sauce or brown gravy in the
+                  dish, the croquettes on the top, and serve very hot.</p>
+         </div>
+         <div>
+            <head>26. Baked Lobster</head>
+            <list>
+               <item>One tablespoonful of butter.</item>
+               <item>Plenty of pepper and salt</item>
+               <item>Worcester sauce. Jamaica pepper, vinegar, bread crumbs.</item>
+            </list>
+            <p>Boil the lobster, then shell and pick it and chop it fine. Add a
+               tablespoonful of butter, plenty of pepper and salt, a little
+               Worcester sauce and some Jamaica pepper just to flavour or some
+               pepper-wine, a little vinegar too. Mix all well together; put it
+               in a small buttered pie-dish, bread-crumb it, put a little dab or
+               so of butter here and there, and bake.</p>
+         </div>
+         <div>
+            <head>27. Lobster Cutlets</head>
+            <list>
+               <item>Half a lb. of lobster.</item>
+               <item>Two ozs. of butter</item>
+               <item>Two teaspoonfuls of chopped onions.</item>
+               <item>One teaspoonfuls of flour.</item>
+               <item>Water, milk, salt, pepper, cayenne, parsley, yolks of two
+                  eggs.</item>
+            </list>
+            <p>Cut up the lobster, letting the flesh (in dice) weigh <unclear>1
+               lb</unclear>. Put in a saucepan two oz of butter, two
+               teaspoonfuls of chopped onions; add the lobster and fry for a
+               minute or two. Add one teaspoonful of flour mixed smooth with
+               water, stir in: add half a pint of milk, salt, pepper, and
+               cayenne, two teaspoons of chopped parsley. Let it boil a little,
+               stirring all the time; add the lobster, give it a boil, add the
+               two yolks of eggs: mix quickly and put in a dish to cool. When
+               cool and firm divide into six parts and shape like cutlets; egg
+               and bread crumb twice. Put a piece of the very small claw to the
+               end of each cutlet so as to form a bone. Fry for a few minutes as
+               you would a sole, in plenty of lard or fat; lay on a cloth, and
+               serve on a napkin with a plenty of parsley. No sauce is needed.
+               The lobster may be prepared shaped and bread crumbed some hours
+               before wanted.</p>
+         </div>
+         <div>
+            <head>28. Old Wife</head>
+            <p>These are queer flat fish. They should be cooked like the English
+               sole. Wash them carefully and dry them well, then dust over a
+               little flour; egg and bread-crumb them, and fry a light brown,
+               turning them when one side is done. Serve with metled butter and
+               garnish with parsley.</p>
+         </div>
+         <div>
+            <head>29. June Fish</head>
+            <p>A cottony fish. It should be stewed in a rich brown sauce with
+               onions, tomatoes, and herbs, and a wineglass of port wine added
+               towards the end of the cooking and thickening with a little
+               flour. A little fresh pepper makes an agreeable addition, but
+               very little.</p>
+         </div>
+         <div>
+            <head>30. Baked Fish No. 1</head>
+         
+         <p>Clean, rinse, and wipe dry any kind of fish; rub with salt and
+            pepper; fill with stuffing, the same as for poultry only drier. Sew
+            up and put in a pan with some hot dripping and a lump of butter.
+            Dredge with flour, and lay over the fish a few thin slices of salt
+            pork or bits of butter. Bake one hour and a half, basting
+            occasionally.</p>
+         </div>
+         <div>
+            <head>31. Baked Fish No. 2</head>
+            <p>Any cold fish, maccaroni, milk, butter, grated cheese,
+               bread-crumbs and cayenne.</p>
+            <p>Boil some maccaroni very tender in milk, about twice as much
+               maccaroni as there is cold fish, which should be broken in small
+               pieces and the bones removed.</p>
+            <p>Mix with it the maccaroni cut in dice, the grated cheese and
+               cayenne. Put it in a flat dish with bread crumbs and some pieces
+               of butter on the top and bake a light brown. Any fish will do for
+               this dish.</p>
+         </div>
+               <div>
+                  <head>32. Turtle Cutlets</head>
+                  <list>
+                     <item>One and a half lbs. of turtle steak</item>
+                     <item>Onions.</item>
+                     <item>Pepper, lime juice, salt, bread or biscuit crumbs,
+                        nutmeg, tomato, skellion, two eggs</item>
+                  </list>
+                  <p>Cut the turtle into cutlets, rub well with onion, and
+                     sprinkle well with pepper, sauce and lime-juice. Get ready
+                     some bread or biscuit crumbs; add nutmeg and some onion or
+                     skellion and tomatoes finely minced: dip the cutlets into
+                     the eggs previously stirred in a plate, then into the
+                     seasoned crumbs; cover well, and fry, serving with cut lime
+                     and parsley.</p>
+               </div>
+         <div>
+            <head>33. Turtle Balls</head>
+                 <list>
+                    <item>Turtle, one and a half lbs.</item>
+                    <item>Seasoning.</item>
+                    <item>A small piece of salt beef</item>
+                    <item>Tomato, skellion, lime-juice, salt, herbs, two eggs.</item>
+                    <item>One tablespoonful of sherry.</item>
+                 </list>
+            <p>Mince the beef and turtle together very fine, add some chopped
+               tomatoes, skellions, herbs, salt and a very little Jamaica fresh
+               pepper: add a squeeze of lime juice, a little sauce a
+               tablespoonful of sherry, a little spice and two well-beaten eggs.
+               Make into balls and fry, sending them to table with a rich well
+               seasoned brown gravy, to which add another teaspooful of sherry
+               and lime.</p>
+         </div>
+         <div>
+            <head>34. Turtle Steak</head>
+            <list>
+               <item>Two lbs. of turtle steak-meat.</item>
+               <item>Lime juice, lard, pepper, onions, tomatoes, flour,
+                  butter.</item>
+            </list>
+            <p>Rub the steak well with lime juice. Have ready some boiling lard
+               in a frying pan. Put in the meat whole. (Some people it cut in
+               pieces, but it is really best done whole, or it is likely to get
+               tough or dry.) Put with it some black pepper and sliced onions
+               and tomatoes. Cover it over a little; when half done it will make
+               its own gravy, but if not quite enough, add a tablespoonful of
+               water, and if a thick gravy is liked a little flour and butter
+               rubbed smoothly together with the water. The steak takes from
+               twenty minutes to half na hour to cook.</p>
+            <p>Serve with the fat put on the top of the meat, squeeze some
+               lime-juice over the whole and garnish with cut lime and slices of
+               onion and tomatoes</p>
+         </div>
+         <div>
+            <head>35. Turtle Stew</head>
+            <list>
+               <item>Two lbs. of turtle stew meat.</item>
+               <item>One quart of water.</item>
+               <item>Salt, lime juice.</item>
+               <item>Cinnamon, nutmeg, pepper, ten cloves, one onion, a few
+                  tomatoes, parsley, thyme, sherry.</item>
+               <item>Two pounds of turtle stew meat.</item>
+            </list>
+            <p>Wash the meat well with salt and lime-juice and put it into a
+               quart of cold water; then add a stick of cinnamon, a large onion,
+               a few tomatoes, some parsley, thyme, herbs and pepper.</p>
+            <p>Stew gently for three hours, adding water now and then if it gets
+               too low. About a quarter of an hour before serving, mix a good
+               tablespoonful of flour smoothly with a little water, sufficiently
+               liquid to pour into the pot to thicken the stew. Stir; at the
+               last minute put in a desert spoonful of sauce and half a glass of
+               sherry; mix well, and serve with a cut lime to squeeze over the
+               meat. </p>
+         </div>
+                  <div>
+                     <head>36. Black-Crabs, Boiled</head>
+                     <p>These are liked either plain, boiled, or "<q>baked in the
+                        back</q>" as the expression is. Plain boiled, they come
+                        to table whole and they have really more flavour that
+                        way, but there are many small bones and there is much
+                        difficulty in eating them <emph>at table</emph>. The
+                        claws contain the principal meat; the back is to be
+                        opened and the gall removed; the black water inside
+                        possesses much flavour. When in full season the eggs are
+                        numerous and excellent: boiled in soup they are
+                        delicious.</p>
+                  </div>
+         <div>
+            <head>37. Black-Crabs, Baked</head>
+            <list>
+               <item>A dozen crabs boiled.</item>
+            </list>
+            <p>Carefully pick the meat from all the claws and smaller bones (it
+               takes a long time and careful picking): then open the backs and
+               extract the eggs, throwing away the galls and putting aside the
+               black water to be added at the last. When all the picking is
+               done, put to the meat two tablespoonfuls of butter, a teaspoonful
+               of black pepper, a dessertspoonful of sauce of pepper-vinegar, a
+               little cayenne and some nutmeg. Mix well, adding salt to taste,
+               and fill as many of the backs as you can, leaving room for a
+               dressings of bread-crumbs on which dabs of butter are placed to
+               moisten. Before putting the meat into the backs, put one or two
+               eggs in each shell and do not forget to mix in the black water,
+               as that has the full black-crab flavour. The twelve crabs ought
+               to make ten good crab-back fillings.</p>
+         </div>
+         <div>
+            <head>38. Land Turtle or Terrapin</head>
+            <p>Cut off the head, and open the back. Remove the flesh from the
+               inside and take away the bones, and also get what meat you can
+               from the legs: Scald it with boiling water to remove the outer
+               skin. Chop the meat into dice, adding a small piece of salt pork
+               and salt beef, some tomatoes, skellion, herbs and black pepper
+               with some cinnamon and nutmeg: add some sauce, butter,
+               lime-juice, and a glass of sherry: mix all well and put into the
+               turtle-back. Bread crumb the top, put dabs of butter here and
+               there and bake in the shell. As there is not much meat in these
+               turtle, it will take two turtle to fill one back. 
+            </p>                  
+         </div>
+      </div>
+      <div>
+        <head>III. SALT FISH.</head>
+         <p>It is suprising to most new-comers, to find that in Jamaica there is
+            hardly a more popular dish among the natives and often among the
+            upper classes than the despised salt fish, eaten at home not from
+            choice, but as a sort of penitential dish. Here, it is the almost
+            daily, and certainly the favourite food of the people generally; and
+            cooked, <emph>as they cook it</emph>, it cannot fail to please the
+            most fastidious. </p>
+         <p>The following are a few of the favourite methods of preparing it.</p>
+         <div>
+            <head>39. Salt Fish and Akees</head>
+            <list>
+               <item>One lb of saltfish  </item>
+               <item>The fruit of twelve ackee pods.</item>
+               <item>Lard, butter and black pepper</item>
+            </list>
+            <p>Soak the salt-fish over night. Put it on in cold water to boil,
+               otherwise it hardens: throw off the first water and put it on
+               again to boil. Carefully pick the ackees free from all red
+               inside, which is dangerous, and boil them for about twenty
+               minutes; add them to the saltfish which is then cut in small
+               pieces; add some lard, butter and pepper. Some prefer the
+               saltfish and ackees mashed together and the melted lard and
+               butter poured over the top.</p>
+         </div>
+         <div>
+            <head>40. Salt Fish and Rice</head>
+            <p>This is a favourite native dish. The saltfish and rice, about a
+               half a pound of salt fish to a pint of rice, are boiled together
+               with the usual bit of salt pork and a little butter.</p>
+         </div>
+         <div>
+            <head>41. Salt Fish Fritters No. 1</head>
+            <p>Some people add an egg or perhaps two to salt-fish and rice, and
+               make fritters of it for breakfast.</p>
+         </div>
+         <div>
+            <head>42. Salt Fish Fritters No. 2</head>
+            <p>Boiled salt-fish and ackees mixed together with pepper and
+               seasoning make excellent fritters. No egg is required.</p>
+         </div>
+         <div>
+            <head>43. Salt Fish Fritters No. 3</head>
+            <list>
+               <item>Half a lb. of salt-fish</item>
+               <item>Jamaica pepper</item>
+               <item>Tomatoes, skellions, butter, lard, parsley and two eggs.</item>
+            </list>
+                  <p>Boil half a pound of the fish and mash it fine with some
+                     seasoning, a tablespoonful of butter, a teaspoonful of
+                     lard, a little chopped Jamaica fresh pepper (or some
+                     cayenne) and some minced tomatoes, skellions and herbs. Mix
+                     well with two well-beaten eggs and fry in fritters. These
+                     are very good for breakfast.</p>
+               </div>
+         <div>
+            <head>44. Salt Herrings</head>
+            <p>Soak the herrings well. Then boil them changing the water once,
+               or they may be too salt. Drain and serve with melted butter and
+               parsley and garnished with slides of fresh pepper, fried onions
+               and tomatoes.</p>
+         </div>
+         <div>
+            <head>45. Salt Mackerel</head>
+            <p>Soak the fish some hours, then boil it, changing the water once
+               to extract the salt. Put it on in cold water and let it come to a
+               boil. Drain, and serve with butter, sauce, garnish with sliced
+               lemons, tomatoes, and fresh peppers.</p>
+         </div>
+         <div>
+            <head>46. Fried Salt Fish</head>
+            <list>
+               <item>Half a lb. of saltfish</item>
+               <item>Onions, tomatoes</item>
+               <item>Lard, butter, pepper.</item>
+            </list>
+            <p>Boil the fish first. Then cut it into pieces not too small, and
+               fry with slices of onions and tomatoes, which serve on the top of
+               the fish with slices of pepper and some parsley.</p>
+         </div>
+         <div>
+            <head>47. Salt Mackerel Cutlets</head>
+            <p>Soak the mackerel for some hours; boil it, putting it on in cold
+               water. Then cut the fish into slices, egg and bread crumb, and
+               fry with lard.</p>
+         </div>
+         <div>
+            <head>48. Salt Fish twice-laid</head>
+            <list>
+               <item>Half a lb. of saltfish</item>
+               <item>Four large potatoes or a good slice of any yam, except the
+                  yampee which is too sweet</item>
+               <item>One tablespoonful of butter</item>
+               <item>One dessert spoonful of lard, skellion, parsley, pepper,
+                  tomatoes, herbs.</item>
+            </list>
+            <p>Boil the fish, chop and mix well with the potato or yam mashed,
+               add the butter and lard, herbs, and other ingredients. Mix in two
+               beaten eggs: butter a pie-dish, put in the mixture and bake a
+               light brown.</p>
+         </div>
+         <div>
+            <head>49. Curried Salt Fish</head>
+            <p>Saltfish stewed in the way mentioned in these receipts, and then
+               curried, with the addition of a spoonful of mustard, is a very
+               acceptable dish. Put a tablespoonful of curry powder and a
+               squeeze of lime-juice to the mixture, and serve with rice balls.</p>
+         </div>
+         <div>
+            <head>50. Salt Fish and Susumbers</head>
+            <p>Boil the salt-fish after soaking it a few hours; while boiling
+               add some of the young susumber berries to the fish and boil till
+               tender. They give it a bitterish taste highly appreciated by the
+               natives, but not palatable to everybody, and one must be careful
+               to choose the right kind of susumber as there are two sorts. This
+               dish his served with melted butter and lard poured over it.</p>
+         </div>
+         <div>
+            <head>51. Shredded Salt Fish</head>
+            <p>Soak some saltfish two hours, pull it to pieces in shreds, and
+               fry with lard adding skellions, tomatoes and pepper.</p>
+         </div>
+         <div>
+            <head>52. Salt Fish Patties</head>
+            <list>
+               <item>Half a lb. of saltfish stewed.</item>
+                  <item>Skellions, tomatoes, pepper, onion, butter, sauce,
+                     parsley and herbs</item>
+               </list>
+            <p>Half a lb. of saltfish stewed with some skellions, tomatoes,
+               pepper and a dessert spoonful of butter. Add a little sauce and
+               nutmeg. Put in patty-pans lined with pastry. Cover and bake.</p>
+         </div>
+         </div>
+      <div>
+         <head>IV.— MEAT</head>
+         <p>Beef, mutton, pork and poultry are to be had in all the markets all
+            over the island, and in the country parts distant from a market,
+            there are always butchers who supply pork, or goal mutton at 6d. per
+            lb. Now and then a cow is killed in the district, and then notice is
+            given.</p>
+         <p>In this little work, I do not allude to any methods of dressing
+            beef, sheep-mutton, pork or poultry; for my desire is merely to
+            introduce to new-comers to Jamaica, our own native methods of
+            cooking our own products, and by no means to attempt to cope with
+            the many excellent works that at present exist on English or other
+            cookery. It will be noticed therefore that nothing will be mentioned
+            here except a few hints that may be of service to those who are
+            strangers to our native dishes, provided as they must already be
+            with cookery books which will guide them in the cooking of beef,
+            mutton, pork or poultry.</p>
+         <p>There will be some surprise and perhaps discomfort on the part of
+            the new-comer who finds that beef of all cuts, is sold at the same
+            price, 6d per lb. no matter what one orders, unless one arranges
+            with the butcher to give beef without bone at 7 1/2d per lb.; this
+            of course would only be practicable with a round a steak, or a
+            fillet. But the butchers charge 6d per lb. for bone as well as meat,
+            and sometimes one is disappointed to find that when the
+            "<soCalled>meat</soCalled>" is delivered, one half of it is
+            "<q>weigh-meat</q>" or large pieces of bone. Sheep mutton is sold at
+            <unclear>15</unclear> per lb. sometimes 10 1/2d. Pork from 6d to 7
+            1/2d oftener 7 1/2d; in the country parts it is always 6d the liver
+            at 4 1/2d per lb., head 4 1/2d per lb. Poultry ought not to fetch
+            more than 9d per lb. in the towns; 6d in the country parts, or at
+            the highest 7 1/2d per lb. In and about Kingston the people hawk
+            them about asking exhorbitant prices; it is always best to weigh
+            them. Ducks vary from 10 1/2d to 15 per lb; turksy 15 per lb;
+            pigeons is 6d a pair for the large 15 3d for the smaller. Wild birds
+            vary in price, from the small ground dove at 3d each, to the larger
+            birds going from 1<unclear>5</unclear> 15 6d, 2<unclear>5</unclear> to
+               2<unclear>5</unclear> 6d and 3<unclear>5</unclear> a pair. Guinea
+               Birds 2<unclear>s</unclear> 6d each or 3s. Wild Guinea Birds 2s
+               6d each, or 5s to 6s per pair.</p>
+      </div>
+      
+      <div>
+            <head></head>
+            
+         </div>
+         <div>
+            <head></head>
+            
+         </div>
+         <div>
+            <head></head>
+            
+         </div>
+         <div>
+            <head></head>
+            
+         </div>
+         <div>
+            <head></head>
+            
+         </div>
+   
+   
+   
+   
+   
+   </body>
+               
+  </text>
+</TEI>
