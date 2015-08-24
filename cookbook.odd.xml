@@ -90,8 +90,8 @@
                 <rng:ref name="data.enumerated"/>
               </datatype>
               <valList type="closed">
-               <valItem ident="orientationNote"/>
-                <valItem ident="ingredientList"/>
+               <valItem ident="orientationNote"/><!-- shorten to orientNote? -->
+                <valItem ident="ingredientList"/><!-- shorten to ingList? -->
                 <valItem ident="coda"/>
                 <valItem ident="preface"/>
                 <valItem ident="recipe"/>
@@ -132,7 +132,12 @@
         </elementSpec>
        
         <!-- can add to this list as I find things that I want to mark. Can
-          change "native" to "imported" or "Jamaican"/ "West Indian" if need be -->
+          change "native" to "imported" or "Jamaican"/ "West Indian" if need be 
+        maybe change to "local" ingredient 
+        narrated ingredient: when the author feels the need to mark it as in need of further explanation
+        
+        
+        -->
         <elementSpec ident="nativeIng"
           ns="http://dsg.northeastern.edu/ehfoodways/ns/1.0"
           mode="add">
@@ -212,11 +217,10 @@
           <gloss>Cultural Alignment</gloss>
           <desc>Moments of intentional alignment to culture or community by way of rhetorical motivations of the author</desc>
           <classes>
-            <memberOf key="att.global"/>
-            <memberOf key="model.global"/>
+            <memberOf mode="add" key="model.global"/>
+            <memberOf mode="add" key="att.global"/>
             <memberOf key="model.divLike"/> 
             <memberOf key="model.qLike"/>
-            <memberOf key="model.nameLike"/>
           </classes>
           <content>
             <rng:interleave>
@@ -252,23 +256,55 @@
           </content>
         </elementSpec>
         
+        
+        <!-- moments of intentional distance/dis-alignment by way of rhetorical motivations
+          of the author, could also be called disAlign (disalign is not really a
+          word is it) or
+          intentional distance? (distAlign): "The natives do this"-marking a
+          distinction btwen herself and Jamaican community -->
         <elementSpec ident="cultDist" mode="add"
-          ns="http://dsg.northeastern.edu/ehfooways/ns/1.0">
+          ns="http://dsg.northeastern.edu/ehfoodways/ns/1.0">
           <gloss>Cultural Distance</gloss>
           <desc>Encodes moments of intentional distance/dis-alignment from the
             culture or community by way of
-            rhetorical motivations of the author
-          </desc>
+            rhetorical motivations of the author</desc>
           <classes>
-            <memberOf key="model.global"/>
-            <memberOf key="att.global"/>
+            <memberOf mode="add" key="model.global"/>
+            <memberOf mode="add" key="att.global"/>
+            <memberOf key="model.divLike"/> 
             <memberOf key="model.qLike"/>
           </classes>
           <content>
-            <rng:text/>
-            <rng:zeroOrMore>
-              <rng:ref name="macro.paraContent"/>
-            </rng:zeroOrMore>
+            <rng:interleave>
+              <rng:text/>
+              <rng:zeroOrMore>
+                <rng:ref name="fw"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="head"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="pb"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.emphLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.qLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.nameLike"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.divPart"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="trailer"/>
+              </rng:zeroOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="figure"/>
+              </rng:zeroOrMore>
+            </rng:interleave>
           </content>
         </elementSpec>
         

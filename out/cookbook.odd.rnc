@@ -2,13 +2,12 @@ default namespace = "http://dsg.northeastern.edu/ehfoodways/ns/1.0"
 namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
 namespace ns1 = "http://www.tei-c.org/ns/1.0"
 namespace ns2 = "http://www.tei-c.org/ns/Examples"
-namespace ns3 = "http://dsg.northeastern.edu/ehfooways/ns/1.0"
 namespace rng = "http://relaxng.org/ns/structure/1.0"
 namespace s = "http://www.ascc.net/xml/schematron"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2015-02-08T17:33:17Z. 
+# Schema generated from ODD source 2015-02-17T09:32:51Z. 
 # Edition: 2.5.0. Last updated on
 #	26th July 2013.
 # Edition Location: http://www.tei-c.org/Vault/P5/2.5.0/
@@ -1354,7 +1353,6 @@ model.nameLike =
   | idno
   | model.persNamePart
   | nativeIng
-  | cultAlign
 model.nameLike_alternation =
   model.nameLike.agent_alternation
   | model.placeStateLike_alternation
@@ -1362,39 +1360,34 @@ model.nameLike_alternation =
   | idno
   | model.persNamePart_alternation
   | nativeIng
-  | cultAlign
 model.nameLike_sequence =
   model.nameLike.agent_sequence,
   model.placeStateLike_sequence,
   rs,
   idno,
   model.persNamePart_sequence,
-  nativeIng,
-  cultAlign
+  nativeIng
 model.nameLike_sequenceOptional =
   model.nameLike.agent_sequenceOptional?,
   model.placeStateLike_sequenceOptional?,
   rs?,
   idno?,
   model.persNamePart_sequenceOptional?,
-  nativeIng?,
-  cultAlign?
+  nativeIng?
 model.nameLike_sequenceOptionalRepeatable =
   model.nameLike.agent_sequenceOptionalRepeatable*,
   model.placeStateLike_sequenceOptionalRepeatable*,
   rs*,
   idno*,
   model.persNamePart_sequenceOptionalRepeatable*,
-  nativeIng*,
-  cultAlign*
+  nativeIng*
 model.nameLike_sequenceRepeatable =
   model.nameLike.agent_sequenceRepeatable+,
   model.placeStateLike_sequenceRepeatable+,
   rs+,
   idno+,
   model.persNamePart_sequenceRepeatable+,
-  nativeIng+,
-  cultAlign+
+  nativeIng+
 model.global =
   model.global.meta
   | model.milestoneLike
@@ -1450,7 +1443,7 @@ model.limitedPhrase =
   | model.ptrLike
   | model.phrase.xml
   | model.pPart.data
-model.divLike = \div | cultAlign
+model.divLike = \div | cultAlign | cultDist
 model.divGenLike = notAllowed
 model.div1Like = notAllowed
 model.applicationLike = application
@@ -6120,8 +6113,19 @@ cultAlign =
   }
 cultDist =
   
-  ## (Cultural Distance) Encodes moments of intentional distance/dis-alignment from the culture or community by way of rhetorical motivations of the author 
-  element ns3:cultDist {
-    text, macro.paraContent*, att.global.attributes, empty
+  ## (Cultural Distance) Encodes moments of intentional distance/dis-alignment from the culture or community by way of rhetorical motivations of the author
+  element cultDist {
+    (text
+     & fw*
+     & head*
+     & pb*
+     & model.emphLike*
+     & model.qLike*
+     & model.nameLike*
+     & model.divPart*
+     & trailer*
+     & figure*),
+    att.global.attributes,
+    empty
   }
 start = TEI
